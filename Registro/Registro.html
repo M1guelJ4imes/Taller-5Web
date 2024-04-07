@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Usuario</title>
+<link rel="stylesheet" type="text/css" href="Css.css">
+</head>
+<body>
+  <h2>Registro de Usuario</h2>
+  <form id="registroForm" onsubmit="return validarFormulario()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required><br>
+
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br>
+    <span id="edad"></span><br>
+
+    <br><label for="correo">Correo:</label>
+    <input type="email" id="correo" name="correo" required><br>
+
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required><br>
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" name="contrasena" required><br>
+
+    <label for="confirmarContrasena">Confirmar Contraseña:</label>
+    <input type="password" id="confirmarContrasena" name="confirmarContrasena" required><br>
+
+    <label for="enfermedades">¿Ha sufrido de enfermedades?</label>
+    <select id="enfermedades" name="enfermedades" onchange="mostrarEnfermedades()">
+        <option value="no">No</option>
+        <option value="si">Sí</option>
+    </select><br>
+
+    <div id="divEnfermedades" style="display: none;">
+        <label for="afeccionImportante">¿Has sufrido alguna afección médica importante en el pasado?</label>
+        <select id="afeccionImportante" name="afeccionImportante" onchange="mostrarInfeccionesContagiosas()">
+            <option value="no">No</option>
+            <option value="si">Sí</option>
+        </select><br>
+        <div id="infeccionesContagiosas" style="display: none;">
+            <label for="enfermedadesContagiosas">¿Cuales?:</label>
+            <textarea id="enfermedadesContagiosas" name="enfermedadesContagiosas" rows="4" cols="40"></textarea><br>
+        </div>
+        <label for="enfermedadCronica">¿Has tenido alguna enfermedad crónica (como diabetes, hipertensión, etc.)?</label>
+        <select id="enfermedadCronica" name="enfermedadCronica" onchange="mostrarInfeccionesContagiosas()">
+            <option value="no">No</option>
+            <option value="si">Sí</option>
+        </select><br>
+        <label for="alergiaspasado">¿Eres alérgico/a a algún medicamento, alimento o sustancia?</label><br>
+        <input type="text" id="alergiaspasado" name="alergiaspasado"><br>
+        <label for="reaccionesAlergicas">¿Has tenido reacciones alérgicas en el pasado?</label><br>
+        <input type="text" id="reaccionesAlergicas" name="reaccionesAlergicas">
+    </div>
+    
+
+    <button type="submit">Registrarse</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
